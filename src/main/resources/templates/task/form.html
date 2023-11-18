@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <h1>Cadastrar Tarefa</h1>
+
+    <div class="content">
+        <form action="" method="post" th:object="${task}">
+            <label for="title">Título</label>
+            <input type="text" th:field="*{title}">
+            <span th:errors="*{title}"></span>
+            
+            <label for="description">Descrição</label>
+            <textarea th:field="*{description}"></textarea>
+            <span th:errors="*{description}"></span>
+            
+            <label for="score">Pontos</label>
+            <input type="number" th:field="*{score}">
+            <span th:errors="*{score}"></span>
+
+            <div class="actions">
+                <a href="/task" class="btn">cancelar</a>
+                <button class="btn blue">salvar</button>
+            </div>
+    
+        </form>
+
+    </div>
+
+
+</body>
+</html>
