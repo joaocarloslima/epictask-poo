@@ -9,5 +9,21 @@
 </head>
 <body>
     <h1>Epic Task</h1>
+
+    <a href="/task/new" class="btn">nova tarefa</a>
+
+    <div class="content">
+        <div class="tasks">
+            <div class="card-task" th:each="task : ${tasks}">
+                <h1 th:text="${task.title}"></h1>
+                <p th:text="${task.description}"></p>
+                <div class="actions">
+                    <form th:action="@{'/task/{id}'(id=${task.id})}" th:method="delete">
+                        <button class="btn red">apagar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
